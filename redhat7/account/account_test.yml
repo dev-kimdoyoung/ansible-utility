@@ -1,0 +1,14 @@
+---
+# account ansible-playbook -i inventory.INI account_test.yml -K
+- name: "OS Configuration"
+  hosts: web_group    # [REF] ./inventory.INI
+  become: yes
+  become_method: su
+  gather_facts: true
+  tasks:
+    - name: Collect only facts returned by facter
+      setup:
+        gather_subset:
+        - network
+      register: network_information
+    - debug: var=network_information.ansible_facts.ansible_all_ipv4_addresses
