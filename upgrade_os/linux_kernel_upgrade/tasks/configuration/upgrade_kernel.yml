@@ -2,14 +2,15 @@
 # # 3. Update Kernel
 - name: localupdate kernel
   yum:
-    name: /Admin/work/220423/kernel
-    state: present
+    name: redhat-release
+    # name: /Admin/work/220423/kernel
+    state: latest
 
 # # 4. Memory Synchroization
-- name: "synchronize current memory buffer to secondary disk"
-  command: "sync;sync;sync"
+# - name: "synchronize current memory buffer to secondary disk"
+#   command: "sync;sync;sync"
 
-# # 5. reboot
+# 5. reboot
 - name: Unconditionally reboot the machine with all defaults
   reboot:
 
@@ -23,9 +24,9 @@
 
 # # 7. Config 백업
 # $ sh getsysinfo_linux.sh 로 백업
-- name: Execute the check Operation System Name command
-  command: "sh {{item.after_pm}}/getsysinfo_linux.sh"
-  loop: "{{ pm_directory }}"
+# - name: Execute the check Operation System Name command
+#   command: "sh {{item.after_pm}}/getsysinfo_linux.sh"
+#   loop: "{{ pm_directory }}"
 
 # # 9. Config 비교
 # Diff /Admin/work/config_bk/before/파일이름 /Admin/work/config_bk/after/파일이름

@@ -1,6 +1,6 @@
 ---
 - name: "Linux Kernel Upgrade"
-  hosts: web_group
+  hosts: web
   gather_facts: true
   become: true
   roles:

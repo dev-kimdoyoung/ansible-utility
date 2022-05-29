@@ -10,20 +10,20 @@
   loop: "{{ pm_directory }}"
 
 # 2. uploaded file
-- name: "Upload files to deestination host"
-  ansible.builtin.copy:
-    src: "{{ item.src }}"
-    dest: "{{ item.dest }}"
-    owner: "root"
-    group: "root"
-    mode: '0755'
-  loop: "{{ upload_list }}"
+# - name: "Upload files to deestination host"
+#   ansible.builtin.copy:
+#     src: "{{ item.src }}"
+#     dest: "{{ item.dest }}"
+#     owner: "root"
+#     group: "root"
+#     mode: '0755'
+#   loop: "{{ upload_list }}"
 
 # 3. excecute configuration backup before PM tasks
-- name: "excecute configuration backup before PM tasks"
-  command: "sh {{ item.before_pm }}"
-  loop: "{{ pm_directory }}"
-  register: result
+# - name: "excecute configuration backup before PM tasks"
+#   command: "sh {{ item.before_pm }}"
+#   loop: "{{ pm_directory }}"
+#   register: result
 
-- name: Result to excute configuration backup
-  debug: var=result.stdout_lines
+# - name: Result to excute configuration backup
+#   debug: var=result.stdout_lines

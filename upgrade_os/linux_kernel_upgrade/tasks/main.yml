@@ -7,6 +7,6 @@
 - name: "execute to kernel upgrade"
   import_tasks: configuration/upgrade_kernel.yml
 
-- name: "After task"
-  import_tasks: configuration/after_task.yml
+# - name: "After task"
+#   import_tasks: configuration/after_task.yml
   
