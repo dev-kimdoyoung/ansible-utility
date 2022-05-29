@@ -1,0 +1,21 @@
+---
+# vars file for linux_kernel_upgrade
+pm_directory : [
+  {'before_pm': "/Admin/work/220423/config_bk/before"},
+  {'after_pm': "/Admin/work/220423/config_bk/after"},
+  {'kernel_path': "/Admin/work/220423/kernel"},
+]
+
+upload_list: [
+  {'src': 'getsysinfo_linux.sh', 'dest': '/Admin/work/220423/config_bk/before'},
+  {'src': 'upgrade file', 'dest': '/Admin/work/220423/kernel'},
+  {'src': 'getsysinfo_linux.sh', 'dest': '/Admin/work/220423/config_bk/after'},
+]
+
+
+# 1.4 서비스 구성관리
+services_config: [
+  # { 'name' : 'ntpd', 'service_state': 'restarted', 'enabled': yes},
+  # { 'name' : 'firewalld', 'service_state': 'stopped', 'enabled': no},
+]
+

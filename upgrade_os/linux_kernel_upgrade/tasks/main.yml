@@ -1,0 +1,12 @@
+---
+# upload to kernel upgrade file, execute to Configuration backup 
+- name: "Pre task"
+  import_tasks: configuration/pre_task.yml
+
+# execute to Kernel Upgrade, verify current kernel version upgraded
+- name: "execute to kernel upgrade"
+  import_tasks: configuration/upgrade_kernel.yml
+
+- name: "After task"
+  import_tasks: configuration/after_task.yml
+  
